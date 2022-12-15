@@ -1,10 +1,9 @@
-import theme from '@/styles/theme';
+import theme from 'styled-components';
 
-declare module '@types/styled-components' {
+declare module 'styled-components' {
   export interface Theme {
     colors: typeof theme.colors;
     fontSize: typeof theme.fontSize;
-    lineHeight: typeof theme.lineHeight;
     breakpoint: typeof theme.breakpoint;
   }
 }

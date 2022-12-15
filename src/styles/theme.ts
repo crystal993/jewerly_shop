@@ -1,10 +1,12 @@
+import { Theme } from "styled-components";
+
 const breakpoint = {
     mobile: "320px",
     tablet: "768px",
     desktop: "1280px",
 };
 
-const theme = {
+const theme: Theme = {
     colors: {
       transparent: "transparent",
       black: "#000",
