@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
-type ProductProps = {}
-
-function Product({}: ProductProps) {
-  return (
-    <div>Product</div>
-  )
+function Product() {
+  return <div>Product</div>;
 }
 
-export default Product
+export default Product;
