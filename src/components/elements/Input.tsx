@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from "react";
 import styled from "styled-components";
 
-type InputProps = {
+export interface InputProps {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   name: string | undefined;
   type: string | (string & {}) | undefined;
@@ -10,7 +10,7 @@ type InputProps = {
   value: string | number | readonly string[] | undefined;
   width: string | number | undefined;
   height: string | number | undefined;
-};
+}
 
 function Input({ onChange, name, type, placeholder, required, value, width, height }: InputProps) {
   return (
