@@ -1,7 +1,12 @@
 import React from "react";
+import Create from "../../components/posting/Create";
 
 function Posting() {
-  return <div>Posting</div>;
+  return (
+    <>
+      <Create />
+    </>
+  );
 }
 
 export default Posting;
