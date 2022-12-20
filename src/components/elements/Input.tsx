@@ -11,6 +11,7 @@ export interface InputProps {
   width: string | number | undefined;
   height: string | number | undefined;
   label: string | undefined;
+  pattern?: string | undefined;
 }
 
 function Input({
@@ -23,6 +24,7 @@ function Input({
   width,
   height,
   label,
+  pattern,
 }: InputProps) {
   return (
     <Wrapper>
@@ -36,6 +38,7 @@ function Input({
         width={width}
         height={height}
         required={required}
+        pattern={pattern}
       />
     </Wrapper>
   );

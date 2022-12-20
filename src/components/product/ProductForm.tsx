@@ -106,6 +106,7 @@ function ProductForm({ title }: ProductFormProps) {
           label={"가격"}
           name="product_price"
           type="number"
+          pattern="[0-9]"
           value={product.product_price}
           onChange={onChangeHandler}
           width={"500px"}
