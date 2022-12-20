@@ -62,7 +62,7 @@ function ProductForm({ title }: ProductFormProps) {
           onChange={onChangeHandler}
           width={"500px"}
           height={"40px"}
-          placeholder={"이미지 url을 입력하세요."}
+          placeholder={"가격을 입력하세요."}
           required={true}
         />
         <Input
@@ -73,7 +73,7 @@ function ProductForm({ title }: ProductFormProps) {
           onChange={onChangeHandler}
           width={"500px"}
           height={"40px"}
-          placeholder={"가격을 입력하세요."}
+          placeholder={"이미지 url을 입력하세요."}
           required={true}
         />
         <Button content={title === "상품등록" ? "상품등록" : "상품수정"} size={"lg"} />
