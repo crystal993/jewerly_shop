@@ -5,8 +5,12 @@ import Button from "../elements/Button";
 import { useNavigate, useParams } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
-import { IProductForm, IUpdateProductActionProps } from "../../types/Product.type";
-import { updateProductAction } from "../../redux/ProductSlice";
+import { ApiStatus, IProductForm, IUpdateProductActionProps } from "../../types/Product.type";
+import {
+  createProductAction,
+  resetCreateListStatus,
+  updateProductAction,
+} from "../../redux/ProductSlice";
 
 export interface ProductFormProps {
   title: string | undefined;
@@ -27,7 +31,9 @@ function ProductForm({ title }: ProductFormProps) {
     setProduct({ ...product, [name]: value });
   };
 
-  const { updateProductFormStatus } = useAppSelector((state: RootState) => state.product);
+  const { createProductFormStatus, updateProductFormStatus } = useAppSelector(
+    (state: RootState) => state.product
+  );
   const dispatch = useAppDispatch();
   const navigator = useNavigate();
 
@@ -40,6 +46,9 @@ function ProductForm({ title }: ProductFormProps) {
         data,
       };
       dispatch(updateProductAction(dirtyFormData));
+      navigator("/");
+    } else {
+      dispatch(createProductAction(data));
       navigator("/");
     }
   };
@@ -55,8 +64,17 @@ function ProductForm({ title }: ProductFormProps) {
       if (productData.length) {
         setProduct({ ...productData[0] });
       }
+    } else {
+      setProduct(initialState);
     }
   }, [title]);
+
+  useEffect(() => {
+    if (createProductFormStatus === ApiStatus.success) {
+      setProduct(initialState);
+      dispatch(resetCreateListStatus());
+    }
+  }, [createProductFormStatus]);
 
   return (
     <Wrapper>
@@ -88,6 +106,7 @@ function ProductForm({ title }: ProductFormProps) {
           label={"가격"}
           name="product_price"
           type="number"
+          pattern="[0-9]"
           value={product.product_price}
           onChange={onChangeHandler}
           width={"500px"}

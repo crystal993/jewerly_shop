@@ -6,6 +6,10 @@ export const getProductListApi = async () => {
   return await httpService.get<IProduct[]>(ApiConfig.product);
 };
 
+export const createProductApi = async (data: IProductForm) => {
+  return await httpService.post<IProduct>(ApiConfig.product, data);
+};
+
 export const deleteProductApi = async (id: number) => {
   const url = `${ApiConfig.product}/${id}`;
   return await httpService.delete(url);
