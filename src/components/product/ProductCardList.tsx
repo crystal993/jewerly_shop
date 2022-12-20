@@ -56,21 +56,27 @@ function ProductCardList() {
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 100px 20px;
 `;
 
 const ProductCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px 0px;
+  gap: 10px 50px;
 `;
 
-const BrandName = styled.p``;
+const BrandName = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.sm};
+`;
 
-const ProductName = styled.p``;
+const ProductName = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.lg};
+`;
 
-const Price = styled.p``;
+const Price = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.lg};
+`;
 
 const Img = styled.img`
   width: 80%;
