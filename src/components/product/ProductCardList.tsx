@@ -6,6 +6,7 @@ import { deleteProductAction, getProductListAction } from "../../redux/ProductSl
 import { ApiStatus, IProduct } from "../../types/Product.type";
 import styled from "styled-components";
 import Button from "../elements/Button";
+import { convertAmount } from "../../utils/convertAmount";
 
 function ProductCardList() {
   const dispatch = useAppDispatch();
@@ -27,7 +28,7 @@ function ProductCardList() {
               <BrandName>{product.brand_name}</BrandName>
               <ProductName>{product.product_name}</ProductName>
               <Img src={product.product_img} alt={product.product_name}></Img>
-              <Price>{product.product_price} 원</Price>
+              <Price>{convertAmount(product.product_price)} 원</Price>
               <ButtonsWrapper>
                 <Button
                   variant="primary"
