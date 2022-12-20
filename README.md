@@ -1,5 +1,8 @@
 ## 📝 Description
 
+![image](https://user-images.githubusercontent.com/72599761/208735013-d434f903-1e63-48bd-a84f-327389c865d8.png)
+
+
 쥬얼리 상품 CRUD가 가능한 웹 애플리케이션입니다.
 
 언어는 Typescript를 사용했고,
