@@ -1,10 +1,10 @@
 import React from "react";
-import Create from "../../components/posting/Create";
+import ProductForm from "../../components/product/ProductForms";
 
 function Posting() {
   return (
     <>
-      <Create />
+      <ProductForm title={"상품등록"} />
     </>
   );
 }
