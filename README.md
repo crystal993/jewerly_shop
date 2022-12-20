@@ -1,46 +1,148 @@
-# Getting Started with Create React App
+## 📝 Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+쥬얼리 상품 CRUD가 가능한 웹 애플리케이션입니다.
 
-## Available Scripts
+언어는 Typescript를 사용했고,
+전역 상태 관리는 Redux-toolkit을 사용했습니다. 스타일 라이브러리는 Styled-components를 사용했습니다.
 
-In the project directory, you can run:
+## 🛠️ Dev Tools
+
+<img src="https://img.shields.io/badge/redux_toolkit-#A102CF?style=for-the-badge&logo=redux&logoColor=white"> <img src="https://img.shields.io/badge/styled_components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"> <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+
+<br>
+
+## **🖥 프로젝트 실행 방법**
+
+fake backend API로 json-server를 사용하고 있습니다.
+
+JSON server를 실행하기 위해서 패키지 설치가 필요합니다.
+
+## `yarn add global json-server`
+
+src 폴더 안에 db.json이 있는 경우 src에서 아래의 명령어를 실행하면 됩니다. 없을 경우
+json server 폴더로 가서 아래의 명령어를 실행
+
+## `json-server -p 3001 db.json`
+
+명령어를 입력하면 3001번 포트에서 fake Backend API가 실행됩니다.
+
+### `yarn install`
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## **📝 디렉토리 구조**
 
-### `yarn test`
+<details>
+<summary>- 디렉토리 구조</summary>
+<div markdown="1">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+📂src
+|   📄App.tsx
+|   📄custom.d.ts
+|   📄index.tsx
+|
++---📂api
+|       📄 ApiConfig.ts
+|       📄 HttpService.ts
+|       📄 ProductService.ts
+|
++---📂assets
+|   \---📂icons
+|           📄 amondz_logo.jpg
+|           📄 error_404_info.png
+|
++---📂components
+|   |   📄ToastifyConfig.ts
+|   |
+|   +---📂common
+|   |       📄Header.tsx
+|   |       📄Layout.tsx
+|   |
+|   +---📂elements
+|   |       📄Button.tsx
+|   |       📄Input.tsx
+|   |
+|   \---📂product
+|           📄ProductCardList.tsx
+|           📄ProductForm.tsx
+|
++---📂hooks
++---📂pages
+|   |   📄Main.tsx
+|   |   📄NotFound.tsx
+|   |
+|   \---📂product
+|           📄Detail.tsx
+|           📄Posting.tsx
+|
++---📂redux
+|       📄hooks.ts
+|       📄ProductSlice.ts
+|       📄store.ts
+|
++---📂router
+|       📄Router.tsx
+|
++---📂styles
+|       📄globalStyle.ts
+|       📄theme.ts
+|
++---📂types
+|       📄Product.type.ts
+|       📄theme.d.ts
+|
+\---📂utils
+|       📄convertAmount.js
 
-### `yarn build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</div>
+</details>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔒 커밋 규칙
 
-### `yarn eject`
+<details>
+<summary>커밋 규칙</summary>
+<div markdown="1">
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## **commit message 규칙**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+⭐ feat : 새로운 기능에 대한 커밋
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+🛠 fix : 버그 수정에 대한 커밋
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+🧱 build : 빌드 관련 파일 수정에 대한 커밋
 
-## Learn More
+👏 chore : 그 외 자잘한 수정에 대한 커밋
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+⚒ refactor :  코드 리팩토링에 대한 커밋
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🎨 style : 코드 스타일 혹은 포맷 등에 관한 커밋
+
+✏ docs : 문서 수정에 대한 커밋
+
+💡 ci : CI관련 설정 수정에 대한 커밋
+
+🚫 제목 끝에 마침표 금지
+⚠ 무엇을 했는지 명확하게 작성
+
+</div>
+</details>
+
+<br>
+
+## **Prettier, ESLint 규칙 **
+
+##### prettier
+
+##### ESLint
+
+- </div>
+  </details>
+
+<br>
