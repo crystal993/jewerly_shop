@@ -168,7 +168,7 @@ globalStyle 설정과 관련된 폴더
 
 <br><br>
 
-## **Prettier, ESLint 규칙 **
+## ⚡ **Prettier, ESLint 규칙**
 
 ##### prettier
 
