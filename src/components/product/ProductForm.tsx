@@ -55,6 +55,8 @@ function ProductForm({ title }: ProductFormProps) {
       if (productData.length) {
         setProduct({ ...productData[0] });
       }
+    } else {
+      setProduct(initialState);
     }
   }, [title]);
 
