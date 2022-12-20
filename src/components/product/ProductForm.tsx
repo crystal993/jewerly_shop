@@ -12,6 +12,7 @@ function ProductForm({ title }: ProductFormProps) {
     brand_name: "",
     product_name: "",
     product_price: "",
+    product_img: "",
   };
 
   const [product, setProduct] = useState(initialState);
@@ -58,6 +59,17 @@ function ProductForm({ title }: ProductFormProps) {
           name="product_price"
           type="number"
           value={product.product_price}
+          onChange={onChangeHandler}
+          width={"500px"}
+          height={"40px"}
+          placeholder={"이미지 url을 입력하세요."}
+          required={true}
+        />
+        <Input
+          label={"이미지"}
+          name="product_img"
+          type="number"
+          value={product.product_img}
           onChange={onChangeHandler}
           width={"500px"}
           height={"40px"}

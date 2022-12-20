@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "brand_name": "Jewerly1",
+      "product_name": "TWINKLE CHAIN NECKLACE",
+      "product_price": "64000",
+      "product_img": "https://cdn.amondz.com/product/48685/resize/subImg/PSI_494009.jpeg?v=1631849379842"
+    },
+    {
+      "id": 2,
+      "brand_name": "Jewerly2",
+      "product_name": "DROP EARRINGS",
+      "product_price": "47700",
+      "product_img": "https://cdn.amondz.com/product/41634/resize/mainImg/PSI_761421.jpeg?v=1662177193920"
+    },
+    {
+      "id": 3,
+      "brand_name": "Jewerly3",
+      "product_name": "ROSE EARRINGS",
+      "product_price": "42840",
+      "product_img": "https://cdn.amondz.com/product/77386/resize/mainImg/PSI_819811.jpeg?v=1668948838940"
+    }
+  ]
+}
