@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "brand_name": "Jewerly1111",
+      "brand_name": "Jewerly1",
       "product_name": "TWINKLE CHAIN NECKLACE",
       "product_price": "64000",
       "product_img": "https://cdn.amondz.com/product/48685/resize/subImg/PSI_494009.jpeg?v=1631849379842"
@@ -27,6 +27,13 @@
       "product_price": "10000",
       "product_img": "https://cdn.amondz.com/product/77386/resize/subImg/PSI_819802.jpeg?v=1668948438843",
       "id": 4
+    },
+    {
+      "brand_name": "MATTER",
+      "product_name": "Rainbow doodle piercing",
+      "product_price": "50000",
+      "product_img": "https://cdn.amondz.com/product/77343/resize/mainImg/PSI_818964.jpeg?v=1668681383082",
+      "id": 5
     }
   ]
 }
