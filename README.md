@@ -7,14 +7,13 @@
 
 ## 🛠️ Dev Tools
 
-<img src="https://img.shields.io/badge/redux_toolkit-#A102CF?style=for-the-badge&logo=redux&logoColor=white"> <img src="https://img.shields.io/badge/styled_components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"> <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+<img src="https://img.shields.io/badge/redux_toolkit-A102CF?style=for-the-badge&logo=redux&logoColor=white"> <img src="https://img.shields.io/badge/styled_components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"> <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
 
 <br>
 
 ## **🖥 프로젝트 실행 방법**
 
 fake backend API로 json-server를 사용하고 있습니다.
-
 JSON server를 실행하기 위해서 패키지 설치가 필요합니다.
 
 ## `yarn add global json-server`
@@ -30,12 +29,12 @@ json server 폴더로 가서 아래의 명령어를 실행
 
 ### `yarn start`
 
-<br>
+<br><br>
 
 ## **📝 디렉토리 구조**
 
 <details>
-<summary>- 디렉토리 구조</summary>
+<summary>디렉토리 구조</summary>
 <div markdown="1">
 
 ```
@@ -102,7 +101,7 @@ json server 폴더로 가서 아래의 명령어를 실행
 </div>
 </details>
 
-<br>
+<br><br>
 
 ## 🔒 커밋 규칙
 
@@ -134,15 +133,19 @@ json server 폴더로 가서 아래의 명령어를 실행
 </div>
 </details>
 
-<br>
+<br><br>
 
 ## **Prettier, ESLint 규칙 **
 
 ##### prettier
 
-##### ESLint
-
-- </div>
-  </details>
+https://github.com/crystal993/jewerly_shop/blob/b9aea56b7c8edb7687d31e6825e335c743ab252f/.prettierrc.js#L1-L7
 
 <br>
+
+##### ESLint
+
+https://github.com/crystal993/jewerly_shop/blob/b9aea56b7c8edb7687d31e6825e335c743ab252f/.eslintrc#L2-L8
+
+
+<br><br>
