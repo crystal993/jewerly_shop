@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-// import { toastError, toastSuccess } from "../components/ToastifyConfig";
-import { ApiStatus, IProductState } from "../types/Product.type";
-import { deleteProductApi, getProductListApi } from "../api/ProductService";
+import { toastError, toastSuccess } from "../components/ToastifyConfig";
+import { ApiStatus, IProductState, IUpdateProductActionProps } from "../types/Product.type";
+import { deleteProductApi, getProductListApi, updateProductApi } from "../api/ProductService";
 
 const initialState: IProductState = {
   list: [],
@@ -20,6 +20,15 @@ export const deleteProductAction = createAsyncThunk(
   async (id: number) => {
     await deleteProductApi(id);
     return id;
+  }
+);
+
+export const updateProductAction = createAsyncThunk(
+  "user/updateProductAction",
+  async ({ id, data }: IUpdateProductActionProps) => {
+    const response = await updateProductApi(id, data);
+
+    return response.data;
   }
 );
 
@@ -45,6 +54,20 @@ const productSlice = createSlice({
     builder.addCase(deleteProductAction.fulfilled, (state, action) => {
       const newList = state.list.filter(x => x.id !== action.payload);
       state.list = newList;
+    });
+    builder.addCase(updateProductAction.pending, state => {
+      state.updateProductFormStatus = ApiStatus.loading;
+    });
+
+    builder.addCase(updateProductAction.fulfilled, state => {
+      state.updateProductFormStatus = ApiStatus.ideal;
+      toastSuccess("상품 정보가 수정되었습니다!");
+    });
+
+    builder.addCase(updateProductAction.rejected, state => {
+      state.updateProductFormStatus = ApiStatus.error;
+
+      toastError("상품 수정 실패");
     });
   },
 });
