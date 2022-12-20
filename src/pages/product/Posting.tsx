@@ -1,5 +1,5 @@
 import React from "react";
-import ProductForm from "../../components/product/ProductForms";
+import ProductForm from "../../components/product/ProductForm";
 
 function Posting() {
   return (
