@@ -20,6 +20,13 @@
       "product_name": "ROSE EARRINGS",
       "product_price": "42840",
       "product_img": "https://cdn.amondz.com/product/77386/resize/mainImg/PSI_819811.jpeg?v=1668948838940"
+    },
+    {
+      "brand_name": "Jewerly4",
+      "product_name": "PETAL EARRINGS",
+      "product_price": "10000",
+      "product_img": "https://cdn.amondz.com/product/77386/resize/subImg/PSI_819802.jpeg?v=1668948438843",
+      "id": 4
     }
   ]
 }
