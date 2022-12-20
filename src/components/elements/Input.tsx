@@ -15,28 +15,21 @@ export interface InputProps {
 function Input({ onChange, name, type, placeholder, required, value, width, height }: InputProps) {
   return (
     <>
-      <StyledInputWrapper>
-        <StyledInput
-          name={name}
-          onChange={onChange}
-          type={type}
-          placeholder={placeholder}
-          value={value}
-          width={width}
-          height={height}
-          required={required}
-        />
-      </StyledInputWrapper>
+      <InputElement
+        name={name}
+        onChange={onChange}
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        width={width}
+        height={height}
+        required={required}
+      />
     </>
   );
 }
 
-const StyledInputWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const StyledInput = styled.input`
+const InputElement = styled.input`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   box-sizing: border-box;
