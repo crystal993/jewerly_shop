@@ -41,7 +41,7 @@ function ProductCardList() {
                   size="sm"
                   content="삭제"
                   onClick={() => {
-                    deleteProductAction(product.id);
+                    dispatch(deleteProductAction(product.id));
                   }}
                 />
               </ButtonsWrapper>

@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // import { toastError, toastSuccess } from "../components/ToastifyConfig";
 import { ApiStatus, IProductState } from "../types/Product.type";
-import { getProductListApi } from "../api/ProductService";
+import { deleteProductApi, getProductListApi } from "../api/ProductService";
 
 const initialState: IProductState = {
   list: [],
@@ -14,6 +14,14 @@ export const getProductListAction = createAsyncThunk("user/getProductListAction"
   const response = await getProductListApi();
   return response.data;
 });
+
+export const deleteProductAction = createAsyncThunk(
+  "user/deleteProductAction",
+  async (id: number) => {
+    await deleteProductApi(id);
+    return id;
+  }
+);
 
 const productSlice = createSlice({
   name: "product",
@@ -33,6 +41,10 @@ const productSlice = createSlice({
     });
     builder.addCase(getProductListAction.rejected, state => {
       state.listStatus = ApiStatus.error;
+    });
+    builder.addCase(deleteProductAction.fulfilled, (state, action) => {
+      const newList = state.list.filter(x => x.id !== action.payload);
+      state.list = newList;
     });
   },
 });
