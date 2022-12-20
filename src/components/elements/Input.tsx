@@ -10,11 +10,23 @@ export interface InputProps {
   value: string | number | readonly string[] | undefined;
   width: string | number | undefined;
   height: string | number | undefined;
+  label: string | undefined;
 }
 
-function Input({ onChange, name, type, placeholder, required, value, width, height }: InputProps) {
+function Input({
+  onChange,
+  name,
+  type,
+  placeholder,
+  required,
+  value,
+  width,
+  height,
+  label,
+}: InputProps) {
   return (
-    <>
+    <Wrapper>
+      <Label>{label}</Label>
       <InputElement
         name={name}
         onChange={onChange}
@@ -25,9 +37,20 @@ function Input({ onChange, name, type, placeholder, required, value, width, heig
         height={height}
         required={required}
       />
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px 0;
+`;
+
+const Label = styled.label`
+  display: flex;
+`;
 
 const InputElement = styled.input`
   width: ${({ width }) => width};
