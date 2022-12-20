@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import Input from "../elements/Input";
 import Button from "../elements/Button";
+import { useNavigate, useParams } from "react-router";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { RootState } from "../../redux/store";
+import { IProductForm, IUpdateProductActionProps } from "../../types/Product.type";
+import { updateProductAction } from "../../redux/ProductSlice";
 
 export interface ProductFormProps {
   title: string | undefined;
@@ -22,11 +27,36 @@ function ProductForm({ title }: ProductFormProps) {
     setProduct({ ...product, [name]: value });
   };
 
+  const { updateProductFormStatus } = useAppSelector((state: RootState) => state.product);
+  const dispatch = useAppDispatch();
+  const navigator = useNavigate();
+
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // todo : api create
-    setProduct(initialState);
+    const data: IProductForm = product;
+    if (title === "상품수정") {
+      const dirtyFormData: IUpdateProductActionProps = {
+        id: productIdToEdit.current,
+        data,
+      };
+      dispatch(updateProductAction(dirtyFormData));
+      navigator("/");
+    }
   };
+
+  const params = useParams();
+  const productIdToEdit = useRef(parseInt(params.id || ""));
+  const { list } = useAppSelector((state: RootState) => state.product);
+
+  useEffect(() => {
+    if (title === "상품수정" && productIdToEdit.current) {
+      const productData = list.filter(x => x.id === productIdToEdit.current);
+
+      if (productData.length) {
+        setProduct({ ...productData[0] });
+      }
+    }
+  }, [title]);
 
   return (
     <Wrapper>
@@ -68,7 +98,7 @@ function ProductForm({ title }: ProductFormProps) {
         <Input
           label={"이미지"}
           name="product_img"
-          type="number"
+          type="text"
           value={product.product_img}
           onChange={onChangeHandler}
           width={"500px"}

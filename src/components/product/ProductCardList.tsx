@@ -27,13 +27,14 @@ function ProductCardList() {
               <BrandName>{product.brand_name}</BrandName>
               <ProductName>{product.product_name}</ProductName>
               <Img src={product.product_img} alt={product.product_name}></Img>
+              <Price>{product.product_price} 원</Price>
               <ButtonsWrapper>
                 <Button
                   variant="primary"
                   size="sm"
                   content="수정"
                   onClick={() => {
-                    navigator(`/edit/${product.id}`);
+                    navigator(`/product/edit/${product.id}`);
                   }}
                 />
                 <Button
@@ -68,6 +69,8 @@ const ProductCard = styled.div`
 const BrandName = styled.p``;
 
 const ProductName = styled.p``;
+
+const Price = styled.p``;
 
 const Img = styled.img`
   width: 80%;
