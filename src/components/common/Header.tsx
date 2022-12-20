@@ -9,7 +9,7 @@ function Header() {
       <StyledLink to="/">
         <LogoImg src={Logo} alt="아몬드 로고" />
       </StyledLink>
-      <StyledLink to="/">상품 등록</StyledLink>
+      <StyledLink to="/product/post">상품 등록</StyledLink>
     </Wrapper>
   );
 }
