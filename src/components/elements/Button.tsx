@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import styled, { css } from "styled-components";
 
 export interface IButtonProps {
-  onClick?: MouseEvent<HTMLButtonElement>;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   variant?: "primary" | "gray";
   size?: "sm" | "md" | "lg";
   color?: "blue" | "black";
