@@ -14,7 +14,8 @@ const Router = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/main" element={<MainPage />} />
           <Route path="/product/detail/:id" element={<DetailPage />} />
-          <Route path="/product/post" element={<PostingPage />} />
+          <Route path="/product/post" element={<PostingPage isEditForm={false} />} />
+          <Route path="/product/edit/:id" element={<PostingPage isEditForm={true} />} />
           <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -1,7 +1,12 @@
 import React from "react";
+import ProductCardList from "../components/product/ProductCardList";
 
 function Main() {
-  return <div>Main</div>;
+  return (
+    <>
+      <ProductCardList />
+    </>
+  );
 }
 
 export default Main;
