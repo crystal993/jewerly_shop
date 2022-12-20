@@ -77,7 +77,6 @@ json server 폴더로 가서 아래의 명령어를 실행
 |   |   📄NotFound.tsx
 |   |
 |   \---📂product
-|           📄Detail.tsx
 |           📄Posting.tsx
 |
 +---📂redux
@@ -101,8 +100,39 @@ json server 폴더로 가서 아래의 명령어를 실행
 
 ```
 
+#### 1. 📂 api 폴더
+axios CRUD와 관련된 함수들을 추상화하여 관리 
+
+#### 2. 📂 components 폴더
+- elements : 자주 사용하는 Button, Input과 같은 재사용 빈도가 높은 컴포넌트들을 elements 폴더에서 관리
+- common : Header, Layout과 같이 모든 페이지에서 동일하게 적용해야만 하는 컴포넌트들을 common 폴더에서 관리 
+- products : product 데이터와 직접적으로 관련이 있는 컴포넌트들을 products 폴더에서 관리 
+
+#### 3. 📂 components 폴더
+- elements : 자주 사용하는 Button, Input과 같은 재사용 빈도가 높은 컴포넌트들을 elements 폴더에서 관리
+- common : Header, Layout과 같이 모든 페이지에서 동일하게 적용해야만 하는 컴포넌트들을 common 폴더에서 관리 
+- products : product 데이터와 직접적으로 관련이 있는 컴포넌트들을 products 폴더에서 관리 
+
+#### 4. 📂 pages 폴더
+어떤 모듈들이 결합되어 있는지 직관적으로 보여줄 수 있을만한 컴포넌트가 필요하다고 생각했습니다.  
+모듈들의 결합 상태를 보여주는 컴포넌트만 관리하는 폴더 
+
+#### 5. 📂 redux 폴더 
+redux와 관련되어 있는 폴더 store와 slice 존재 
+
+#### 6. 📂 router 폴더
+react-router-dom 페이지 라우팅과 관련된 폴더
+
+#### 7. 📂 styles 폴더
+globalStyle 설정과 관련된 폴더 
+
+#### 8. 📂 utils 폴더 
+시간, 돈, 날짜 등과 관련된 함수들을 관리하는 폴더
+
 </div>
 </details>
+
+
 
 <br><br>
 
